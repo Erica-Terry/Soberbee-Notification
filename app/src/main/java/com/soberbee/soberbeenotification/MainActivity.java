@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setVibrate(new long[]{100, 300, 100})
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
 
-        int mNotificationId = 001;
+        int mNotificationId = 1;
         NotificationManager mNotifyMgr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         mNotifyMgr.notify(mNotificationId, mBuilder.build());
 
@@ -79,23 +79,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String getEncouragement()
     {
+        String[] messages = getResources().getStringArray(R.array.enc_mess);
+
         Random rand  = new Random();
-        int messageNum = rand.nextInt(30);
+        int messageNum = rand.nextInt(messages.length);
 
-        switch (messageNum)
-        {
-            case 1:
-                return "Your family loves you.";
-
-            case 2:
-                return "Keep working hard!";
-
-            case 3:
-                return "You are not alone.";
-
-            default:
-                return "You've got this!";
-
-        }
+        return messages[messageNum];
     }
 }
