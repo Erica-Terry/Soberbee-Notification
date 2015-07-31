@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="enc_mess">
+        <item>Action is the foundational key to all success.</item>
+        <item>Don\'t regret the past, learn from it</item>
+        <item>Believe you can and you're already there.</item>
+        <item>Live everyday fully!</item>
+        <item>To be the best, you have to overcome the worst.</item>
+        <item>The best way out is always through.</item>
+        <item>All you need is love. We love you!</item>
+        <item>It does not matter how slowly you go, as long as you don't stop!</item>
+        <item>It is never too late to be what you might have been.</item>
+        <item>You were born to succeed!</item>
+        <item>Life begins at the end of your comfort zone.</item>
+        <item>Concentrate on the beauty of the present moment.</item>
+        <item>We love you and we believe in you!</item>
+        <item>Stay strong against temptation. You are above it all.</item>
+        <item>People and things come and go, but we will always be here for you!</item>
+        <item>Live, travel, adventure, bless, and don't be sorry.</item>
+        <item>You\'ve got this!</item>
+        <item>Don\'t give up!</item>
+        <item>You\'re stronger than</item>
+        <item>Keep working hard.</item>
+        <item>Your family loves you.</item>
+        <item>You are not alone!</item>
+        <item>Every moment is a fresh beginning</item>
+        <item>You have overcome, therefore you have become.</item>
+        <item>Take life one day at a time.</item>
+        <item>Turn your wounds into wisdom.</item>
+        <item>No one can make you do anything. You are invincible!</item>
+        <item>Do what you can, with what you've got, wherever you are.</item>
+    </string-array>
+</resources>
