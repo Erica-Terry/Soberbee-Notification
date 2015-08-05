@@ -10,6 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.parse.Parse;
+import com.parse.ParseGeoPoint;
+import com.parse.ParseInstallation;
+
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -20,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Parse.initialize(this, "052DKHY86dLD0F9cXNsOcDbS3Syrd3tdx6UZE6K2", "CM5Rt3zjCDyXzzSnrZ2vOHu1NfG4H1K6ID3HPrlX");
+        ParseInstallation.getCurrentInstallation().saveInBackground();
 
         // Button for encouraging notification messages
         encourageButton = (Button) findViewById(R.id.encourage_btn);
@@ -85,5 +91,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int messageNum = rand.nextInt(messages.length);
 
         return messages[messageNum];
+    }
+
+    private void getLocation()
+    {
     }
 }
