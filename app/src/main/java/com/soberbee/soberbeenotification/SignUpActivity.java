@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -12,10 +14,18 @@ import com.parse.SignUpCallback;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener{
 
+    EditText emailText;
+    EditText passwordText;
+    EditText passwordConfirmText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        emailText = (EditText) findViewById(R.id.email_text);
+        passwordText = (EditText) findViewById(R.id.password_text);
+        passwordConfirmText = (EditText) findViewById(R.id.confirm_text);
 
 
     }
@@ -46,12 +56,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v)
     {
         ParseUser user = new ParseUser();
-        user.setUsername("my name");
-        user.setPassword("my pass");
-        user.setEmail("email@example.com");
+        //user.setUsername(getString(R.string.));
+        user.setPassword(String.valueOf(passwordText.getText()));
+        user.setPassword(String.valueOf(passwordConfirmText.getText()));
+        user.setEmail(String.valueOf(emailText.getText()));
 
-        // other fields can be set just like with ParseObject
-        user.put("phone", "650-253-0000");
+
 
         user.signUpInBackground(new SignUpCallback() {
             public void done(ParseException e) {
