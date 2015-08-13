@@ -49,8 +49,9 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Already have an account? Log In."
-            android:id="@+id/sign"
-            android:layout_gravity="right" />
+            android:id="@+id/login_text"
+            android:layout_gravity="right"
+            android:onClick="onClick" />
 
     </LinearLayout>
 
