@@ -1,6 +1,5 @@
 package com.soberbee.soberbeenotification;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -29,7 +28,7 @@ public class SignUpActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        emailText = (EditText) findViewById(R.id.email_signup_text);
+        emailText = (EditText) findViewById(R.id.email_login_text);
         passwordText = (EditText) findViewById(R.id.password_signup_text);
         passwordConfirmText = (EditText) findViewById(R.id.confirm_signup_text);
         signUpButton = (Button) findViewById(R.id.sign_btn);
