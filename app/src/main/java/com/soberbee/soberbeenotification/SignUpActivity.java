@@ -29,11 +29,11 @@ public class SignUpActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        emailText = (EditText) findViewById(R.id.email_text);
-        passwordText = (EditText) findViewById(R.id.password_text);
-        passwordConfirmText = (EditText) findViewById(R.id.confirm_text);
+        emailText = (EditText) findViewById(R.id.email_signup_text);
+        passwordText = (EditText) findViewById(R.id.password_signup_text);
+        passwordConfirmText = (EditText) findViewById(R.id.confirm_signup_text);
         signUpButton = (Button) findViewById(R.id.sign_btn);
-        loginText = (TextView) findViewById(R.id.login_text);
+        loginText = (TextView) findViewById(R.id.login_signup_text);
 
 
         // Action taken when sign up button is clicked
@@ -76,7 +76,6 @@ public class SignUpActivity extends AppCompatActivity{
         loginText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
 

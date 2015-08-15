@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Soberbee-Notification.iml" filepath="$PROJECT_DIR$/Soberbee-Notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SoberbeeNotification.iml" filepath="$PROJECT_DIR$/SoberbeeNotification.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
