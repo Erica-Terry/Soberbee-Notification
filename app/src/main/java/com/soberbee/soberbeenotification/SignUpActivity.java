@@ -1,26 +1,22 @@
 package com.soberbee.soberbeenotification;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View.OnClickListener;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
-public class SignUpActivity extends AppCompatActivity{
-
-    EditText emailText;
-    EditText passwordText;
-    EditText passwordConfirmText;
-    Button signUpButton;
-    TextView loginText;
+public class SignUpActivity extends AppCompatActivity implements FragmentChangeListener {
 
 
     @Override
@@ -28,80 +24,16 @@ public class SignUpActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        emailText = (EditText) findViewById(R.id.email_login_text);
-        passwordText = (EditText) findViewById(R.id.password_signup_text);
-        passwordConfirmText = (EditText) findViewById(R.id.confirm_signup_text);
-        signUpButton = (Button) findViewById(R.id.sign_btn);
-        loginText = (TextView) findViewById(R.id.login_signup_text);
-
-
-        // Action taken when sign up button is clicked
-        signUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // Save new user data into Parse.com Data Storage
-                String email = String.valueOf(emailText.getText());
-                String password = String.valueOf(passwordText.getText());
-
-                if (email.equals("") && password.equals("")) {
-                    Toast.makeText(getApplicationContext(),
-                            "Please complete the sign up form",
-                            Toast.LENGTH_LONG).show();
-                } else {
-                    ParseUser user = new ParseUser();
-                    user.setEmail(email);
-                    user.setPassword(password);
-                    user.signUpInBackground(new SignUpCallback() {
-                        public void done(ParseException e) {
-                            if (e == null) {
-                                // Show a simple Toast message upon successful registration
-                                Toast.makeText(getApplicationContext(),
-                                        "Successfully Signed up, please log in.",
-                                        Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(getApplicationContext(),
-                                        "Sign up Error", Toast.LENGTH_LONG)
-                                        .show();
-                            }
-                        }
-                    });
-                }
-            }
-        });
-
-
-        // Action when login button is clicked
-        loginText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_sign_up, menu);
-        return true;
+        Fragment fragment = new SignUpFragment();
+        replaceFragment(fragment);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    public void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.sign_up_container, fragment, fragment.toString());
+        fragmentTransaction.addToBackStack(fragment.toString());
+        fragmentTransaction.commit();
     }
-
-
 }

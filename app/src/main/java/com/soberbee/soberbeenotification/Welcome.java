@@ -18,10 +18,8 @@ import com.parse.ParseUser;
 
 import java.util.Random;
 
-/**
- * Created by mardochedumaine on 8/13/15.
- */
-public class Welcome  extends AppCompatActivity implements View.OnClickListener{
+
+public class Welcome extends AppCompatActivity implements View.OnClickListener{
 
     private Button encourageButton;
 
@@ -33,28 +31,6 @@ public class Welcome  extends AppCompatActivity implements View.OnClickListener{
         // Button for encouraging notification messages
         encourageButton = (Button) findViewById(R.id.encourage_btn);
         encourageButton.setOnClickListener(this);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

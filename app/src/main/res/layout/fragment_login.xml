@@ -11,19 +11,18 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="77dp">
+        android:layout_marginTop="130dp">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:inputType="text"
             android:ems="10"
-            android:id="@+id/email_login_text"
+            android:id="@+id/username_login_text"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="74dp"
-            android:hint="Email" />
+            android:hint="Username" />
 
         <EditText
             android:layout_width="match_parent"
@@ -39,11 +38,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Don&apos;t have an account yet? Sign up."
-            android:id="@+id/login_login_text"
+            android:id="@+id/sign_up_txt"
             android:layout_gravity="right"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:layout_marginTop="20dp" />
 
     </LinearLayout>
 
@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:id="@+id/sign_btn"
+        android:id="@+id/login_btn"
         android:textColor="@color/button_text"
         android:background="@color/button_bg"
         android:layout_gravity="center_horizontal"
